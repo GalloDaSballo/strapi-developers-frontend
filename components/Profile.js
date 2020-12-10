@@ -20,14 +20,8 @@ export default function Profile ({imageUrl, name, location, skills, online}) {
                 <button className={styles.available}>Available Now</button>
                 {
                     online === true 
-                    ?
-                    <>
-                    <p className={styles.online_text}>Online</p>
-                    </>
-                    : 
-                    <>
-                    <p>Last seen {online}h ago</p>
-                    </>
+                    ? <p className={styles.online_text}>Online</p>
+                    : <p>Last seen {online}h ago</p>
                 }
             </div>
         </>

@@ -9,6 +9,10 @@ export default function Tags ({tags}) {
     //   setActiveTags([])
     // }, [tags])
     
+    /**
+     * Given a tag return whether the tag is active or not
+     * @param {any} tag 
+     */
     const isTagActive = (tag) => {
         console.log('activeTags',activeTags);
         let t = activeTags.find((item) => item === tag.label)
@@ -16,14 +20,17 @@ export default function Tags ({tags}) {
         else return false
     }
 
+    /**
+     * Given a tag activates it if it was inactive, deactiveded if it was active
+     * @param {any} tag 
+     */
     const toggleTag = (tag) => {
-        let t = activeTags.find((item) => item === tag.label)
-        if(t) {
+        let found = activeTags.find((item) => item === tag.label)
+        if(found) {
             let newTags = [...activeTags] // Copia
             newTags = newTags.filter((item) => item !== tag.label)
             setActiveTags(newTags)
-        }
-        else {
+        } else {
             const newTags = [...activeTags] // Copia
             newTags.push(tag.label)
             setActiveTags(newTags)
@@ -37,6 +44,7 @@ export default function Tags ({tags}) {
             <div className={styles.tags}>
                 {tags.map(tag => 
                     <Tag 
+                        key={tag}
                         tag={tag} 
                         active={isTagActive(tag)} 
                         toggleTag={toggleTag}

@@ -124,9 +124,9 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"></link>
       </Head>
-      <Masthead></Masthead>
-      <Tags tags={tags}></Tags>
-      <Profiles profiles={profiles}></Profiles>
+      <Masthead />
+      <Tags tags={tags} />
+      <Profiles profiles={profiles} />
       <div style={{display: 'flex', width: '100%', justifyContent: 'center', paddingTop: '50px', paddingBottom: '70px'}}>
         <img src="/footer-img.svg" />
       </div>
