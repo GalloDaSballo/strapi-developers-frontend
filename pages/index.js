@@ -4,119 +4,10 @@ import Masthead from '../components/Masthead'
 import Profiles from '../components/Profiles'
 import Tags from '../components/Tags'
 
+import { fromImageToUrl, API_URL } from '../utils/urls'
 
-export default function Home() {
-  const profiles = [
-    {
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-      name: 'Rebecca Dimarco',
-      location: 'Rome, Italy',
-      skills: ['angular', 'python', 'css', 'html', '.net', 'bootstrap'],
-      online: true
-    },
-    {
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-      name: 'Rebecca Dimarco',
-      location: 'Rome, Italy',
-      skills: ['angular', 'python', 'css', 'html', '.net', 'bootstrap'],
-      online: 2
-    },
-    {
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-      name: 'Rebecca Dimarco',
-      location: 'Rome, Italy',
-      skills: ['angular', 'python', 'css', 'html', '.net', 'bootstrap'],
-      online: true
-    },
-    {
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-      name: 'Rebecca Dimarco',
-      location: 'Rome, Italy',
-      skills: ['angular', 'python', 'css', 'html', '.net', 'bootstrap'],
-      online: 12
-    },
-    {
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-      name: 'Rebecca Dimarco',
-      location: 'Rome, Italy',
-      skills: ['angular', 'python', 'css', 'html', '.net', 'bootstrap'],
-      online: true
-    },
-    {
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-      name: 'Rebecca Dimarco',
-      location: 'Rome, Italy',
-      skills: ['angular', 'python', 'css', 'html', '.net', 'bootstrap'],
-      online: true
-    }
-  ]
+export default function Home({ profiles, tags }) {
 
-  const tags = [
-    {
-      label: 'all tags(825)',
-      active: true
-    },
-    {
-      label: 'java(825)',
-      active: false
-    },
-    {
-      label: 'angular(825)',
-      active: false
-    },
-    {
-      label: 'sql(825)',
-      active: false
-    },
-    {
-      label: 'c#(825)',
-      active: false
-    },
-    {
-      label: 'c++(825)',
-      active: false
-    },
-    {
-      label: 'laravel(825)',
-      active: false
-    },
-    {
-      label: 'ux(825)',
-      active: false
-    },
-    {
-      label: 'css(825)',
-      active: false
-    },
-    {
-      label: 'ui(825)',
-      active: false
-    },
-    {
-      label: 'ios(825)',
-      active: false
-    },
-    {
-      label: 'devops(825)',
-      active: false
-    },
-    {
-      label: 'typescript(825)',
-      active: false
-    },
-    {
-      label: 'mongodb(825)',
-      active: false
-    },
-    {
-      label: 'kubernetes(825)',
-      active: false
-    },
-    {
-      label: 'docker(825)',
-      active: false
-    }
-  ]
   return (
     <>
     <Head>
@@ -132,4 +23,19 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const profile_res = await fetch(`${API_URL}/profiles`)
+  const profiles = await profile_res.json()
+
+  const tag_res = await fetch(`${API_URL}/tags`)
+  const tags = await tag_res.json()
+
+  return {
+    props: {
+      profiles,
+      tags
+    }
+  }
 }

@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 1024px) {
     .container {
         padding: 42px 40px 11px 42px;
     }

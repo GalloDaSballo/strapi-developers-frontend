@@ -4,7 +4,7 @@
     padding: 35px 0px 35px 243px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 1024px) {
     .container {
         padding-left: 10px;
     }

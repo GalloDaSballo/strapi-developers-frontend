@@ -51,6 +51,7 @@
     flex-wrap: wrap;
     padding: 30px 0px;
     justify-content: center;
+    min-height: 125px;
 }
 
 .skill_item {
@@ -65,6 +66,7 @@
     color: #2c2e33;
     margin-right: 8px;
     margin-bottom: 9px;
+    max-height: 24px;
 }
 
 .online_text {

@@ -1,7 +1,7 @@
 import styles from '../styles/Tags.module.css'
 
 export default function Tag ({tag, active, toggleTag}) {
-    console.log('isActive', active)
+
     return (  
         <>
             {active && 

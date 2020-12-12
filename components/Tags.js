@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Tag from '../components/Tag'
 
 export default function Tags ({tags}) {
-    const [activeTags, setActiveTags] = useState(['all tags(825)'])
+    const [activeTags, setActiveTags] = useState(['all tags'])
     
     // useEffect(() => {
     //   setActiveTags([])
