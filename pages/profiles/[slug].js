@@ -3,22 +3,7 @@ import { fromImageToUrl, API_URL } from '../../utils/urls'
 import styles from '../../styles/ProfilePage.module.css'
 import profileStyles from '../../styles/Profile.module.css'
 import Link from 'next/link'
-
-/**
- * If in mobile view open and close the menu
- */
-const handlePopupClick = () => {
-    var menu = document.querySelector('#menu_popup');
-
-    if(menu.classList.contains('close') == true) {
-        menu.style.display = "block"
-        menu.classList.remove('close')
-    } else {
-        menu.style.display = "none"
-        menu.classList.add('close')
-    }
-    
-}
+import Header from '../../components/Header'
 
 const Profile = ({ profile }) => {
   return (
@@ -30,33 +15,7 @@ const Profile = ({ profile }) => {
         </Head>
 
         <div className={styles.container}>
-            <div className={styles.navbar}>
-                <img src="/strapi-dev-logo.svg" />
-                <div className={styles.left_nav_button}>
-                    <button className={styles.login}>
-                        Log In
-                    </button>
-
-                    <button className={styles.job}>
-                        Post a job
-                    </button>
-                </div>
-                <div className={styles.left_nav_hamburger} onClick={() => handlePopupClick()}>
-                    <img src="/menu-ham.svg" />
-                </div>
-                <div id="menu_popup" className={`${styles.menu_popup} close`}>
-                    <Link href={'/login'}>
-                        <a>
-                            <p>Log In</p>
-                        </a>
-                    </Link>
-                    <Link href={'/job'}>
-                        <a>
-                            <p>Post a job</p>
-                        </a>
-                    </Link>
-                </div>
-            </div>
+            <Header dark />
             <div className={styles.container_card}>
                 <div className={styles.back}>
                 <p>
@@ -76,18 +35,32 @@ const Profile = ({ profile }) => {
                             <div className={styles.info_profile}>
                                 <h3>{profile.name}</h3>
                                 <p>{profile.location}</p>
-                                {
+                                {/* {
                                     profile.online === true 
                                     ? <p className={profileStyles.online_text}>Online</p>
                                     : <p className={styles.last_seen}>Last seen {profile.online}h ago</p>
-                                }
+                                } */}
                                 <button className={`${profileStyles.available} ${styles.send_message}`}>Send Message</button>
                             </div>
                         </div>
                         <div className={styles.right_column}>
+                                {
+                                    profile.github_profile &&
+                                    <div class={`${styles.info_section} ${styles.social}`}>
+                                        <img src="/github.svg" />
+                                        <p style={{margin: 0}}>{profile.github_profile}</p>
+                                    </div>
+                                }
+                                {
+                                    profile.linkedin_profile &&
+                                    <div class={`${styles.info_section} ${styles.social}`}>
+                                        <img src="/linkedin.svg" />
+                                        <p style={{margin: 0}}>{profile.linkedin_profile}</p>
+                                    </div>
+                                }
                                 <div class={styles.info_section}>
                                     <p class={styles.info_section_title}>Availability</p>
-                                    <p>Full time (40/h week)</p>
+                                    <p>{profile.availability}</p>
                                     <span className={`${styles.available} ${styles.desktop}`}>Available</span>
                                 </div>
                                 <div class={styles.info_section}>
@@ -95,23 +68,23 @@ const Profile = ({ profile }) => {
                                 </div>
                                 <div class={styles.info_section}>
                                     <p class={styles.info_section_title}>Time Zones</p>
-                                    <p>Full time (40/h week)</p>
+                                    <p>{profile.time_zone}</p>
                                 </div>
                                 <div class={styles.info_section}>
                                     <p class={styles.info_section_title}>Preferred Salary</p>
-                                    <p>Full time (40/h week)</p>
+                                    <p>{profile.preferred_salary}</p>
                                 </div>
                                 <div class={styles.info_section}>
                                     <p class={styles.info_section_title}>Fluent in</p>
-                                    <p>Full time (40/h week)</p>
+                                    <p>{profile.fluent_in}</p>
                                 </div>
-                                <div class={styles.info_section}>
+                                {/* <div class={styles.info_section}>
                                     <img src="/site-web.svg" />
                                     <img src="/github.svg" />
                                     <img src="/twitter.svg" />
                                     <img src="/instagram.svg" />
                                     <img src="/location.svg" />
-                                </div>
+                                </div> */}
                         </div>
                     </div>
                     <div className={styles.line_card} />
@@ -129,16 +102,7 @@ const Profile = ({ profile }) => {
                         <div className={`${styles.line_card} ${styles.mobile}`} />
                         <div className={styles.bio}>
                             <h4>About</h4>
-                            <p>
-                            I’m a web developer. I spend my whole day, practically every day, experimenting with HTML, CSS, 
-                            and JavaScript; dabbling with Python and Ruby; and inhaling a wide variety of potentially useless 
-                            information through a few hundred RSS feeds. I build websites that delight and inform. I do it well.
-                            I’m curious, and I enjoy work that challenges me to learn something new and stretch in a different 
-                            direction. I do my best to stay on top of changes in the state of the art so that I can meet challenges 
-                            with tools well suited to the job at hand. The list of projects I follow on GitHub will give you a good 
-                            idea of the types of tools I’d prefer to be using, and my Instapaper “Starred” list will give you a 
-                            glimpse into the reading material I find interesting enough to share.
-                            </p>
+                            <p>{profile.bio}</p>
                         </div>
                     </div>
                 </div>

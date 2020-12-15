@@ -117,13 +117,22 @@
     margin-right: 25px;
 }
 
+.info_profile p {
+    margin: 10px;
+}
+
 .info_section {
     display: flex;
     align-items: center;
 }
 
+.info_section.social {
+    margin: 10px;
+}
+
 .info_section img {
     margin-right: 27px;
+    width: 25px;
 }
 
 .info_section_title {

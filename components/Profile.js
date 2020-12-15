@@ -24,11 +24,11 @@ export default function Profile ({imageUrl, name, location, skills, online, slug
                         <button className={styles.available}>Available Now</button>
                     </a>
                 </Link>
-                {
+                {/* {
                     online === true 
                     ? <p className={styles.online_text}>Online</p>
                     : <p>Last seen {online}h ago</p>
-                }
+                } */}
             </div>
         </>
     )
