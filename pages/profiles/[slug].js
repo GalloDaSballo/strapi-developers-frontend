@@ -34,6 +34,7 @@ const Profile = ({ profile }) => {
                             />
                             <div className={styles.info_profile}>
                                 <h3>{profile.name}</h3>
+                                <p>{profile.title}</p>
                                 <p>{profile.location}</p>
                                 {/* {
                                     profile.online === true 
@@ -76,15 +77,8 @@ const Profile = ({ profile }) => {
                                 </div>
                                 <div class={styles.info_section}>
                                     <p class={styles.info_section_title}>Fluent in</p>
-                                    <p>{profile.fluent_in}</p>
+                                    <p>{profile.languages}</p>
                                 </div>
-                                {/* <div class={styles.info_section}>
-                                    <img src="/site-web.svg" />
-                                    <img src="/github.svg" />
-                                    <img src="/twitter.svg" />
-                                    <img src="/instagram.svg" />
-                                    <img src="/location.svg" />
-                                </div> */}
                         </div>
                     </div>
                     <div className={styles.line_card} />
