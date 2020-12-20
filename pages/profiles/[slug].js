@@ -88,7 +88,7 @@ const Profile = ({ profile }) => {
                             <div className={styles.skills}>
                                 {
                                     profile.skills.map(skill => (
-                                        <div className={profileStyles.skill_item}>{skill.label}</div>
+                                        <div key={skill.label} className={profileStyles.skill_item}>{skill.label}</div>
                                     ))
                                 }
                             </div>

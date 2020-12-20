@@ -16,7 +16,7 @@ export default function Profile ({imageUrl, name, title, location, skills, onlin
                 <div className={styles.skills}>
                     {
                         skills.map(skill => (
-                            <div className={styles.skill_item}>{skill.label}</div>
+                            <div key={skill.label} className={styles.skill_item}>{skill.label}</div>
                         ))
                     }
                 </div>
