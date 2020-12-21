@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import Masthead from '../components/Masthead';
 import Profiles from '../components/Profiles';
 import Tags from '../components/Tags';
 
-import { fromImageToUrl, API_URL } from '../utils/urls';
+import { API_URL } from '../utils/urls';
 
 export default function Home({ profiles, tags }) {
     return (
