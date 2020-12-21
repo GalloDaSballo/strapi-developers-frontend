@@ -1,5 +1,5 @@
 import styles from '../styles/Profile.module.css';
-import { fromImageToUrl, API_URL } from '../utils/urls';
+import { fromImageToUrl } from '../utils/urls';
 import Link from 'next/link';
 
 export default function Profile({ imageUrl, name, title, location, skills, online, slug }) {

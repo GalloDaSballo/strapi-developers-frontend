@@ -1,13 +1,9 @@
 import styles from '../styles/Tags.module.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Tag from '../components/Tag';
 
 export default function Tags({ tags }) {
     const [activeTags, setActiveTags] = useState(['all tags']);
-
-    // useEffect(() => {
-    //   setActiveTags([])
-    // }, [tags])
 
     /**
      * Given a tag return whether the tag is active or not
