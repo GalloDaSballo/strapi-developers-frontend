@@ -1,7 +1,7 @@
 export default function Footer() {
-    return(
+    return (
         <footer>
             <img src="/footer-img.svg" />
         </footer>
-    )
+    );
 }
