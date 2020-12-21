@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import styles from '../styles/Masthead.module.css'
 
 export default function Header({ dark }) {
@@ -14,7 +15,11 @@ export default function Header({ dark }) {
 
     return (
         <div className={`${styles.nav} ${dark ? styles.dark : ''}`}>
-                <img src="/strapi-dev-logo.svg" />
+            <Link href="/">
+                <a>
+                    <img src="/strapi-dev-logo.svg" />
+                </a>
+            </Link>
                 <div className={styles.left_nav_button}>
                         <a href="https://alex543742.typeform.com/to/HchPvNAJ" target="_blank" rel="noopener noreferrer">
                             <button className={styles.login}>
