@@ -10,10 +10,6 @@ export default function Home({ profiles, tags }) {
         <>
             <Head>
                 <title>Strapi Developers</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"></link>
             </Head>
             <Masthead />
             <Tags tags={tags} />

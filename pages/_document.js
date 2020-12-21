@@ -25,12 +25,18 @@ export default class MyDocument extends Document {
                     />
                     <noscript>
                         <img
+                            alt="fbpixel"
                             height="1"
                             width="1"
                             style={{ display: 'none' }}
                             src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
                         />
                     </noscript>
+
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"></link>
                 </Head>
                 <body>
                     <Main />
