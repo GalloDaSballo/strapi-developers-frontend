@@ -47,36 +47,36 @@ const Profile = ({ profile }) => {
                         <div className={styles.right_column}>
                                 {
                                     profile.github_profile &&
-                                    <div class={`${styles.info_section} ${styles.social}`}>
+                                    <div className={`${styles.info_section} ${styles.social}`}>
                                         <img src="/github.svg" />
                                         <p style={{margin: 0}}>{profile.github_profile}</p>
                                     </div>
                                 }
                                 {
                                     profile.linkedin_profile &&
-                                    <div class={`${styles.info_section} ${styles.social}`}>
+                                    <div className={`${styles.info_section} ${styles.social}`}>
                                         <img src="/linkedin.svg" />
                                         <p style={{margin: 0}}>{profile.linkedin_profile}</p>
                                     </div>
                                 }
-                                <div class={styles.info_section}>
-                                    <p class={styles.info_section_title}>Availability</p>
+                                <div className={styles.info_section}>
+                                    <p className={styles.info_section_title}>Availability</p>
                                     <p>{profile.availability}</p>
                                     <span className={`${styles.available} ${styles.desktop}`}>Available</span>
                                 </div>
-                                <div class={styles.info_section}>
+                                <div className={styles.info_section}>
                                     <span className={`${styles.available} ${styles.mobile}`}>Available</span>
                                 </div>
-                                <div class={styles.info_section}>
-                                    <p class={styles.info_section_title}>Time Zones</p>
+                                <div className={styles.info_section}>
+                                    <p className={styles.info_section_title}>Time Zones</p>
                                     <p>{profile.time_zone}</p>
                                 </div>
-                                <div class={styles.info_section}>
-                                    <p class={styles.info_section_title}>Preferred Salary</p>
+                                <div className={styles.info_section}>
+                                    <p className={styles.info_section_title}>Preferred Salary</p>
                                     <p>{profile.preferred_salary}</p>
                                 </div>
-                                <div class={styles.info_section}>
-                                    <p class={styles.info_section_title}>Fluent in</p>
+                                <div className={styles.info_section}>
+                                    <p className={styles.info_section_title}>Fluent in</p>
                                     <p>{profile.languages}</p>
                                 </div>
                         </div>
