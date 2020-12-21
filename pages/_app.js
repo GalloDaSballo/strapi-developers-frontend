@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { initGA, logPageView } from '../utils/ga';
+import Footer from '../components/Footer';
 import * as fbq from '../utils/fb';
 
 import '../styles/globals.css';
@@ -39,7 +40,12 @@ function MyApp({ Component, pageProps }) {
         };
     }, [router.events]);
 
-    return <Component {...pageProps} />;
+    return (
+        <>
+            <Component {...pageProps} />
+            <Footer />
+        </>
+    );
 }
 
 export default MyApp;

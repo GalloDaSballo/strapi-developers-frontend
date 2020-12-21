@@ -14,16 +14,6 @@ export default function Home({ profiles, tags }) {
             <Masthead />
             <Tags tags={tags} />
             <Profiles profiles={profiles} />
-            <div
-                style={{
-                    display: 'flex',
-                    width: '100%',
-                    justifyContent: 'center',
-                    paddingTop: '50px',
-                    paddingBottom: '70px'
-                }}>
-                <img src="/footer-img.svg" />
-            </div>
         </>
     );
 }

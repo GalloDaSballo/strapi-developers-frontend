@@ -106,9 +106,6 @@ const Profile = ({ profile }) => {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.footer} ${styles.mobile}`}>
-                <img src="/footer-img.svg" />
-            </div>
         </div>
     );
 };
