@@ -1,0 +1,21 @@
+.container{
+  padding: 50px 24px 70px;
+}
+.imageContainer{
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  width: 100%;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+
+}
+
+.columns{
+  display: flex;
+}
+
+.column{
+  flex: 1;
+}
