@@ -7,6 +7,17 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                    <script
+                        id="Cookiebot"
+                        src="https://consent.cookiebot.com/uc.js"
+                        data-cbid={process.env.NEXT_PUBLIC_COOKIEBOT_ID}
+                        data-blockingmode="auto"
+                        type="text/javascript"></script>
+                    <script
+                        id="CookieDeclaration"
+                        src={`https://consent.cookiebot.com/${process.env.NEXT_PUBLIC_COOKIEBOT_ID}/cd.js`}
+                        type="text/javascript"
+                        async></script>
                     {/* Global Site Code Pixel - Facebook Pixel */}
                     <script
                         dangerouslySetInnerHTML={{
