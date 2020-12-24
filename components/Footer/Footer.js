@@ -27,8 +27,17 @@ export default function Footer() {
                 <div className={styles.column}>
                     <h4>About</h4>
                     <p>
-                        Strapi Developers is the worlds leading site to find and hire the best
-                        Strapi Developers in the world
+                        Strapi Developers is a curated list of developers that use Strapi in their
+                        work.
+                    </p>
+
+                    <p>
+                        On Strapi Developers you can get in touch with some of the most cutting edge
+                        developers, from all parts of the world
+                    </p>
+                    <p>
+                        The list is curated by Alex The Entreprenerd, author of The Complete Strapi
+                        Course
                     </p>
                 </div>
             </div>

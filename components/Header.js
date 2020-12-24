@@ -21,12 +21,15 @@ export default function Header({ dark }) {
             </Link>
             <div className={styles.left_nav_button}>
                 <a
-                    href="https://alex543742.typeform.com/to/HchPvNAJ"
+                    href={process.env.NEXT_PUBLIC_TYPEFORM_LINK}
                     target="_blank"
                     rel="noopener noreferrer">
                     <button className={styles.login}>Add your Profile</button>
                 </a>
-                <a href="mailto:alex@entreprenerd.xyz" target="_blank" rel="noopener noreferrer">
+                <a
+                    href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_TO}?subject=${process.env.NEXT_PUBLIC_EMAIL_SUBJECT}`}
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <button className={styles.job}>Recruiters</button>
                 </a>
             </div>
@@ -35,13 +38,16 @@ export default function Header({ dark }) {
             </div>
             <div className={`${styles.menu_popup} ${open ? styles.open : ''}`}>
                 <a
-                    href="https://alex543742.typeform.com/to/HchPvNAJ"
+                    href={process.env.NEXT_PUBLIC_TYPEFORM_LINK}
                     target="_blank"
                     rel="noopener noreferrer">
                     <p>Add your Profile</p>
                 </a>
 
-                <a href="mailto:alex@entreprenerd.xyz" target="_blank" rel="noopener noreferrer">
+                <a
+                    href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_TO}?subject=${process.env.NEXT_PUBLIC_EMAIL_SUBJECT}`}
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <p>Recruiters</p>
                 </a>
             </div>
