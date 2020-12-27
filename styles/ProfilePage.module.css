@@ -189,6 +189,13 @@
     display: none;
 }
 
+.blur_item {
+    background: #a8a8a8;
+    color: #a8a8a8;
+    cursor: pointer;
+    filter: blur(7px);
+}
+
 @media (min-width: 320px) and (max-width: 1024px) {
     .left_nav_hamburger {
         display: inline-block;
