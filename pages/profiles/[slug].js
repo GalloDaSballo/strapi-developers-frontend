@@ -32,9 +32,23 @@ const Profile = ({ profile }) => {
                                     }}
                                 />
                                 <div className={styles.info_profile}>
-                                    <h3>{profile.name}</h3>
+                                    {   
+                                        profile.hasPaid ? (
+                                            <h3>{profile.name}</h3>
+                                        ) : (
+                                            <h3 className={styles.blur_item}>{profile.name}</h3>
+                                        )
+                                        
+                                    }
                                     <p>{profile.title}</p>
-                                    <p>{profile.location}</p>
+                                    {   
+                                        profile.hasPaid ? (
+                                            <p>{profile.location}</p>
+                                        ) : (
+                                            <p className={styles.blur_item}>{profile.location}</p>
+                                        )
+                                    }
+                                    
                                     {/* {
                                     profile.online === true 
                                     ? <p className={profileStyles.online_text}>Online</p>
@@ -77,7 +91,13 @@ const Profile = ({ profile }) => {
                                 </div>
                                 <div className={styles.info_section}>
                                     <p className={styles.info_section_title}>Preferred Salary</p>
-                                    <p>{profile.preferred_salary}</p>
+                                    {   
+                                        profile.hasPaid ? (
+                                            <p>{profile.preferred_salary}</p>
+                                        ) : (
+                                            <p className={styles.blur_item}>{profile.preferred_salary}</p>
+                                        )
+                                    }
                                 </div>
                                 <div className={styles.info_section}>
                                     <p className={styles.info_section_title}>Fluent in</p>
