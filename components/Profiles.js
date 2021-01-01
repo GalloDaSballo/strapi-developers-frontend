@@ -8,7 +8,6 @@ export default function Profiles({ profiles }) {
                 <Profile
                     key={profile.name}
                     imageUrl={profile.image}
-                    name={profile.name}
                     title={profile.title}
                     location={profile.location}
                     skills={profile.skills}

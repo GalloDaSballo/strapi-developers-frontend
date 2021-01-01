@@ -2,8 +2,8 @@ import styles from '../styles/Profile.module.css';
 import { fromImageToUrl } from '../utils/urls';
 import Link from 'next/link';
 
-export default function Profile({ imageUrl, name, title, location, skills, online, slug }) {
-    console.log('profilo', imageUrl, name, location, skills, online);
+export default function Profile({ imageUrl, title, location, skills, online, slug }) {
+    console.log('profilo', imageUrl, location, skills, online);
 
     return (
         <>
@@ -12,7 +12,7 @@ export default function Profile({ imageUrl, name, title, location, skills, onlin
                     className={styles.img_profile}
                     style={{ backgroundImage: `url(${fromImageToUrl(imageUrl)})` }}
                 />
-                <h3>{name}</h3>
+                <h3> </h3>
                 <p>{title}</p>
                 <p>{location}</p>
                 <div className={styles.skills}>
