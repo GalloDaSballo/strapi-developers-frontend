@@ -32,23 +32,18 @@ const Profile = ({ profile }) => {
                                     }}
                                 />
                                 <div className={styles.info_profile}>
-                                    {   
-                                        profile.hasPaid ? (
-                                            <h3>{profile.name}</h3>
-                                        ) : (
-                                            <h3 className={styles.blur_item}>{profile.name}</h3>
-                                        )
-                                        
-                                    }
+                                    {profile.hasPaid ? (
+                                        <h3>{profile.name}</h3>
+                                    ) : (
+                                        <h3 className={styles.blur_item}>{profile.name}</h3>
+                                    )}
                                     <p>{profile.title}</p>
-                                    {   
-                                        profile.hasPaid ? (
-                                            <p>{profile.location}</p>
-                                        ) : (
-                                            <p className={styles.blur_item}>{profile.location}</p>
-                                        )
-                                    }
-                                    
+                                    {profile.hasPaid ? (
+                                        <p>{profile.location}</p>
+                                    ) : (
+                                        <p className={styles.blur_item}>{profile.location}</p>
+                                    )}
+
                                     {/* {
                                     profile.online === true 
                                     ? <p className={profileStyles.online_text}>Online</p>
@@ -61,16 +56,24 @@ const Profile = ({ profile }) => {
                                 </div>
                             </div>
                             <div className={styles.right_column}>
-                                {profile.github_profile && (
+                                {profile.github && (
                                     <div className={`${styles.info_section} ${styles.social}`}>
                                         <img src="/github.svg" />
-                                        <p style={{ margin: 0 }}>{profile.github_profile}</p>
+                                        <p
+                                            className={profile.hasPaid ? '' : styles.blur_item}
+                                            style={{ margin: 0 }}>
+                                            {profile.github}
+                                        </p>
                                     </div>
                                 )}
-                                {profile.linkedin_profile && (
+                                {profile.linkedin && (
                                     <div className={`${styles.info_section} ${styles.social}`}>
                                         <img src="/linkedin.svg" />
-                                        <p style={{ margin: 0 }}>{profile.linkedin_profile}</p>
+                                        <p
+                                            className={profile.hasPaid ? '' : styles.blur_item}
+                                            style={{ margin: 0 }}>
+                                            {profile.linkedin}
+                                        </p>
                                     </div>
                                 )}
                                 <div className={styles.info_section}>
@@ -91,13 +94,13 @@ const Profile = ({ profile }) => {
                                 </div>
                                 <div className={styles.info_section}>
                                     <p className={styles.info_section_title}>Preferred Salary</p>
-                                    {   
-                                        profile.hasPaid ? (
-                                            <p>{profile.preferred_salary}</p>
-                                        ) : (
-                                            <p className={styles.blur_item}>{profile.preferred_salary}</p>
-                                        )
-                                    }
+                                    {profile.hasPaid ? (
+                                        <p>{profile.preferred_salary}</p>
+                                    ) : (
+                                        <p className={styles.blur_item}>
+                                            {profile.preferred_salary}
+                                        </p>
+                                    )}
                                 </div>
                                 <div className={styles.info_section}>
                                     <p className={styles.info_section_title}>Fluent in</p>
