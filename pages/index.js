@@ -19,10 +19,10 @@ export default function Home({ profiles, tags }) {
 }
 
 export async function getStaticProps() {
-    const profile_res = await fetch(`${API_URL}/profiles`);
+    const profile_res = await fetch(`${API_URL}/profiles?_limit=-1`);
     const profiles = await profile_res.json();
 
-    const tag_res = await fetch(`${API_URL}/tags`);
+    const tag_res = await fetch(`${API_URL}/tags?_limit=-1`);
     const tags = await tag_res.json();
 
     return {

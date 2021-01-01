@@ -145,7 +145,7 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export async function getStaticPaths() {
-    const profile_res = await fetch(`${API_URL}/profiles`);
+    const profile_res = await fetch(`${API_URL}/profiles?_limit=-1`);
     const profiles = await profile_res.json();
 
     return {
