@@ -70,12 +70,17 @@ export async function getStaticProps() {
     const profile_res = await fetch(`${API_URL}/profiles?_limit=-1`);
     const profiles = await profile_res.json();
 
+    //Pseudorandom Thanks to: https://stackoverflow.com/a/46545530
+    const shuffled = profiles
+        .map((a) => ({ sort: Math.random(), value: a }))
+        .sort((a, b) => a.sort - b.sort)
+        .map((a) => a.value);
     const tag_res = await fetch(`${API_URL}/tags?_limit=-1`);
     const tags = await tag_res.json();
 
     return {
         props: {
-            profiles,
+            profiles: shuffled,
             tags
         }
     };
