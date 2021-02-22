@@ -5,8 +5,10 @@ import Profiles from '../components/Profiles';
 import Tags from '../components/Tags';
 
 import { API_URL } from '../utils/urls';
+import { Profile, Tag } from '../types';
 
-const useActiveTagsAndProfiles = (profiles, tags) => {
+
+const useActiveTagsAndProfiles = (profiles, tags):  {activeTags: Tag[],  toggleTag: (tag: Tag) => void, activeProfiles: Profile[]} => {
     const [activeTags, setActiveTags] = useState([]);
 
     useEffect(() => {
@@ -51,7 +53,7 @@ const useActiveTagsAndProfiles = (profiles, tags) => {
     return { activeTags, toggleTag, activeProfiles };
 };
 
-export default function Home({ profiles, tags }) {
+const Home: React.FC<{profiles: Profile[], tags: Tag[]}> = ({ profiles, tags }) => {
     const { activeTags, toggleTag, activeProfiles } = useActiveTagsAndProfiles(profiles, tags);
 
     return (
@@ -68,7 +70,7 @@ export default function Home({ profiles, tags }) {
 
 export async function getStaticProps() {
     const profile_res = await fetch(`${API_URL}/profiles?_limit=-1`);
-    const profiles = await profile_res.json();
+    const profiles: Profile[] = await profile_res.json();
 
     //Pseudorandom Thanks to: https://stackoverflow.com/a/46545530
     const shuffled = profiles
@@ -76,7 +78,7 @@ export async function getStaticProps() {
         .sort((a, b) => a.sort - b.sort)
         .map((a) => a.value);
     const tag_res = await fetch(`${API_URL}/tags?_limit=-1`);
-    const tags = await tag_res.json();
+    const tags: Tag[] = await tag_res.json();
 
     return {
         props: {
@@ -85,3 +87,5 @@ export async function getStaticProps() {
         }
     };
 }
+
+export default Home

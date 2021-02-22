@@ -1,6 +1,7 @@
 import styles from '../styles/Tags.module.css';
+import { Tag } from '../types';
 
-export default function Tag({ tag, active, toggleTag }) {
+const SingleTag: React.FC<{tag: Tag, active: boolean, toggleTag: (tag: Tag) => void}> = ({ tag, active, toggleTag }) => {
     return (
         <>
             {active && (
@@ -19,3 +20,5 @@ export default function Tag({ tag, active, toggleTag }) {
         </>
     );
 }
+
+export default SingleTag;

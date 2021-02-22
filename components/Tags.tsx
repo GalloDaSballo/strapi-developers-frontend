@@ -1,7 +1,8 @@
 import styles from '../styles/Tags.module.css';
-import Tag from '../components/Tag';
+import { Tag } from '../types';
+import SingleTag from './SingleTag';
 
-export default function Tags({ tags, activeTags, toggleTag }) {
+const Tags: React.FC<{tags: Tag[], activeTags: Tag[], toggleTag: (tag: Tag) => void}> = ({ tags, activeTags, toggleTag }) => {
     /**
      * Given a tag return whether the tag is active or not
      * @param {any} tag
@@ -18,9 +19,11 @@ export default function Tags({ tags, activeTags, toggleTag }) {
             <h4>Select tags to filter your search and find and hire a remote developer</h4>
             <div className={styles.tags}>
                 {tags.map((tag) => (
-                    <Tag key={tag} tag={tag} active={isTagActive(tag)} toggleTag={toggleTag} />
+                    <SingleTag key={tag.label} tag={tag} active={isTagActive(tag)} toggleTag={toggleTag} />
                 ))}
             </div>
         </div>
     );
 }
+
+export default Tags;

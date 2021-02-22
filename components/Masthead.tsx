@@ -1,10 +1,14 @@
 import styles from '../styles/Masthead.module.css';
-import Header from '../components/Header';
+import Header from './Header';
 
 export default function Masthead() {
     return (
         <div className={styles.container}>
             <Header />
+
+
+
+            
             <div className={styles.body}>
                 <div className={styles.body_text}>
                     <h1>Ready. Remote. Go!</h1>

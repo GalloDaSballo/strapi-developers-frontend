@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import * as fbq from '../utils/fb';
 
 import '../styles/globals.css';
+import { AppProps } from 'next/dist/next-server/lib/router/router';
 
 /**
  * All tracking stuff on page change
@@ -14,7 +15,7 @@ const handleRouteChange = () => {
     logPageView();
 };
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter();
 
     /** Credits: https://github.com/vercel/next.js/blob/canary/examples/with-react-ga/utils/analytics.js */

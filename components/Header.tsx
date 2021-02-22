@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Masthead.module.css';
 
-export default function Header({ dark }) {
+const Header: React.FC<{dark?: boolean}> = ({ dark }) => {
     const [open, setOpen] = useState(false);
 
     /**
@@ -54,3 +54,5 @@ export default function Header({ dark }) {
         </div>
     );
 }
+
+export default Header

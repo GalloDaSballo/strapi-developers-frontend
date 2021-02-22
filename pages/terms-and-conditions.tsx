@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import styles from '../styles/Page.module.css';
 
-export default function Privacy() {
+const Privacy: React.FC = () => {
     return (
         <>
             <Head>
@@ -325,3 +325,5 @@ export default function Privacy() {
         </>
     );
 }
+
+export default Privacy

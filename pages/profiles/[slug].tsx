@@ -4,8 +4,9 @@ import styles from '../../styles/ProfilePage.module.css';
 import profileStyles from '../../styles/Profile.module.css';
 import Link from 'next/link';
 import Header from '../../components/Header';
+import { Profile } from '../../types';
 
-const Profile = ({ profile }) => {
+const SingleProfilePage: React.FC<{profile: Profile}> = ({ profile }) => {
     return (
         <div>
             <Head>
@@ -156,4 +157,4 @@ export async function getStaticPaths() {
     };
 }
 
-export default Profile;
+export default SingleProfilePage;
