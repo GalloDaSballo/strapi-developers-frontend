@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Masthead.module.css';
+import { useUser } from '../context/UserContext';
 
 const Header: React.FC<{dark?: boolean}> = ({ dark }) => {
+    const user = useUser()
     const [open, setOpen] = useState(false);
 
     /**
@@ -20,6 +22,7 @@ const Header: React.FC<{dark?: boolean}> = ({ dark }) => {
                 </a>
             </Link>
             <div className={styles.left_nav_button}>
+                <Link href="/edit"><a>{user && <p>Logged in as {user.email}</p>}</a></Link>
                 <a
                     href={process.env.NEXT_PUBLIC_TYPEFORM_LINK}
                     target="_blank"

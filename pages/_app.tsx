@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { initGA, logPageView } from '../utils/ga';
 import Footer from '../components/Footer';
 import * as fbq from '../utils/fb';
-
+import { UserContextProvider } from "../context/UserContext";
 import '../styles/globals.css';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 
@@ -42,10 +42,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, [router.events]);
 
     return (
-        <>
+        <UserContextProvider>
             <Component {...pageProps} />
             <Footer />
-        </>
+        </UserContextProvider>
     );
 }
 
