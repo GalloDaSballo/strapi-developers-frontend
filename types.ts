@@ -5,6 +5,9 @@ export interface Skill {
 export type Tag = Skill
 
 export interface Profile {
+
+  hasPaid: boolean; // TODO Figure out how to use
+
   name: string;
   location: string;
   image: {
@@ -16,7 +19,7 @@ export interface Profile {
   preferred_salary: string;
   time_zone: string;
   title: string;
-  linkeding: string;
+  linkedin: string;
   github: string;
   skills: Skill[]
 }

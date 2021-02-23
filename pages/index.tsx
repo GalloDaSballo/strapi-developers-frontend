@@ -48,8 +48,6 @@ const useActiveTagsAndProfiles = (profiles, tags):  {activeTags: Tag[],  toggleT
         return profiles;
     }, [activeTags]);
 
-    console.log('activeProfiles', activeProfiles);
-
     return { activeTags, toggleTag, activeProfiles };
 };
 

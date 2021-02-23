@@ -79,7 +79,7 @@ const SingleProfilePage: React.FC<{profile: Profile}> = ({ profile }) => {
                                 )}
                                 <div className={styles.info_section}>
                                     <p className={styles.info_section_title}>Availability</p>
-                                    <p>{profile.availability}</p>
+
                                     <span className={`${styles.available} ${styles.desktop}`}>
                                         Available
                                     </span>
