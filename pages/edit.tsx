@@ -66,6 +66,7 @@ const EditProfilePage: React.FC = () => {
   if(!user) {
     return (
       <div>
+        <Header dark/>
         Please Login first
         <Link href="/login">
           <a>Login</a>
@@ -75,7 +76,7 @@ const EditProfilePage: React.FC = () => {
   }
 
   if(!profileData){
-    return <div><h2>Loading your profile</h2></div>
+    return <div><Header dark/><h2>Loading your profile</h2></div>
   }
 
   return(
