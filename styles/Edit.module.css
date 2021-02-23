@@ -1,0 +1,77 @@
+
+.title {
+  text-align: center;
+  padding: 15px 0;
+}
+.updateForm {
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.updateForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.updateForm input,
+.updateForm select {
+  border-radius: 3px;
+  border: solid 1px #3333;
+  padding: 10px 15px;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+
+}
+
+.updateForm button {
+ margin-top: 15px;
+ display: block;
+ font-family: inherit;
+ background-color: #6851ff;
+ color: #fff;
+ border: none;
+ font-size: 17px;
+ font-weight: 400;
+ width: 100%;
+ border-radius: 7px;
+ padding: 16px 0;
+ cursor: pointer;
+}
+
+.updateForm button:disabled {
+   background-color: rgba(42, 38, 73, 0.609);
+   cursor: default;
+}
+
+
+.warning {
+  padding: 5px 0;
+  color: red;
+  font-size: 13px;
+}
+
+.formControl {
+  padding: 5px 0 ;
+}
+
+.imageContainer {
+  padding: 20px 0;
+}
+
+.imageContainer input {
+  border: none;
+  padding: 0;
+}
+ 
+.imageContainer img{
+  width: 150px;
+}
+
+@media screen and (max-width: 720px) {
+  .updateForm {
+    width: 90%;
+  }
+}
