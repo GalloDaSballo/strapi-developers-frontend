@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import Header from "../components/Header"
 import { useMagic, useUser } from "../context/UserContext"
 import { Profile } from "../types"
 import { API_URL } from "../utils/urls"
@@ -79,6 +80,7 @@ const EditProfilePage: React.FC = () => {
 
   return(
     <div>
+      <Header dark/>
       <h2>Edit your Profile</h2>
 
     </div>

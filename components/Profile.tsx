@@ -3,8 +3,6 @@ import { fromImageToUrl } from '../utils/urls';
 import Link from 'next/link';
 
 export default function Profile({ imageUrl, title, location, skills, online, slug }) {
-    console.log('profilo', imageUrl, location, skills, online);
-
     return (
         <>
             <div className={styles.container}>
