@@ -4,15 +4,17 @@ export interface Skill {
 
 export type Tag = Skill
 
+export interface Image {
+    url: string;
+}
+
 export interface Profile {
 
   hasPaid: boolean; // TODO Figure out how to use
 
   name: string;
   location: string;
-  image: {
-    url: string;
-  }
+  image: Image;
   slug: string;
   bio: string;
   languages: string;

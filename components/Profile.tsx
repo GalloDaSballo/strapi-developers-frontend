@@ -1,14 +1,15 @@
 import styles from '../styles/Profile.module.css';
 import { fromImageToUrl } from '../utils/urls';
 import Link from 'next/link';
+import { Image, Tag } from '../types';
 
-export default function Profile({ imageUrl, title, location, skills, online, slug }) {
+const Profile: React.FC<{image: Image; title: string; location: string; skills: Tag[]; slug: string}> = ({ image, title, location, skills, slug }) => {
     return (
         <>
             <div className={styles.container}>
                 <div
                     className={styles.img_profile}
-                    style={{ backgroundImage: `url(${fromImageToUrl(imageUrl)})` }}
+                    style={{ backgroundImage: `url(${fromImageToUrl(image)})` }}
                 />
                 <h3> </h3>
                 <p>{title}</p>
@@ -25,12 +26,9 @@ export default function Profile({ imageUrl, title, location, skills, online, slu
                         <button className={styles.available}>Available Now</button>
                     </a>
                 </Link>
-                {/* {
-                    online === true 
-                    ? <p className={styles.online_text}>Online</p>
-                    : <p>Last seen {online}h ago</p>
-                } */}
             </div>
         </>
     );
 }
+
+export default Profile

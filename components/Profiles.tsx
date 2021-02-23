@@ -7,11 +7,10 @@ export default function Profiles({ profiles }) {
             {profiles.map((profile) => (
                 <Profile
                     key={profile.name}
-                    imageUrl={profile.image}
+                    image={profile.image}
                     title={profile.title}
                     location={profile.location}
                     skills={profile.skills}
-                    online={profile.online}
                     slug={profile.slug}
                 />
             ))}
